@@ -1,5 +1,6 @@
 class ComplexNumber
   attr_reader :real, :imaginary
+  EQUALITY_DELTA = 1e-15
 
   def initialize(real, imaginary = 0)
     @real = real.to_f
@@ -41,6 +42,6 @@ class ComplexNumber
   end
 
   def ==(other)
-    (self - other).abs < 1e-15
+    (self - other).abs < EQUALITY_DELTA
   end
 end
